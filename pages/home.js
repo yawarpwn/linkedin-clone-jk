@@ -74,7 +74,6 @@ export default function Home({ providers }) {
 
 export async function getServerSideProps() {
   const providers = await getProviders()
-  console.log({ providers })
 
   return {
     props: {
