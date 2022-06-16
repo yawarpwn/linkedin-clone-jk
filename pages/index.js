@@ -2,8 +2,14 @@ import Head from 'next/head'
 import { getSession, signOut, useSession } from 'next-auth/react'
 import Header from 'components/Header'
 import Sidebar from 'components/Sidebar'
+import Feed from 'components/Feed'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+  const router = useRouter()
+  const { status} = useSession({ required: true, onUnauthenticated() {
+    router.push('/home')
+  }}) 
   return (
     <div className='bg-[#f3f2ef] dark:bg-black dark:text-white h-screen overflow-y-scroll md:space-y-6'>
       <Head>
@@ -15,7 +21,7 @@ export default function Home() {
       <main className='flex justify-center gap-x-5 px-4 sm:px-12'>
         <div className='flex flex-col md:flex-row gap-x-5'>
           <Sidebar />
-          {/* <Feed /> */}
+          <Feed />
         </div>
         {/* <Widgets /> */}
       </main>
