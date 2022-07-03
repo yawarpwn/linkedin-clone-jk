@@ -14,7 +14,7 @@ export default function Input () {
 
   const {data: session} = useSession() 
   return (
-    <div className="bg-white dark:bg-[#1D2226] rounded-lg p-3 space-y-3 border border-gray-300 dark:border-none">
+    <div className="bg-white dark:bg-[#1D2226] rounded-lg p-3 space-y-3 border border-gray-300 dark:border-none ">
       <div className="flex items-center space-x-2">
         <Avatar
           src={session?.user?.image}
