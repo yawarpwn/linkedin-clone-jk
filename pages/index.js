@@ -74,7 +74,7 @@ export async function getServerSideProps(context) {
     'sortBy=popularity&' +
     `apiKey=${process.env.NEWS_API_KEY}`
 
-  const articles = await fetch(url).then(res => res.json())
+  const  articles  = await fetch(url).then(res => res.json())
 
   return {
     props: {
